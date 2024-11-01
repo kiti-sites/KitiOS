@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body{
+      font-family: sans-serif;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Kiti</title>
+</head>
+<body>
+  <h1>Portal Kiti</h1>
+  <p>Crie sua Kiti Account <a href="sign-up.html">aqui</a> ou faça login <a href="sign-in.html">aqui</a></p>
+  <!-- Add a <div id="user-button"> element to your HTML -->
+<div id="user-button"></div>
+
+<!-- Initialize Clerk with your
+Clerk Publishable key and Frontend API URL -->
+<script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_test_dGhvcm91Z2gtZWxlcGhhbnQtNDIuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  src="https://thorough-elephant-42.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+  type="text/javascript"
+></script>
+
+<script>
+  window.addEventListener("load", async function () {
+    await Clerk.load();
+
+    const userbuttonDiv =
+      document.getElementById('user-button');
+
+    Clerk.mountUserButton(userbuttonDiv);
+  });
+</script>
+</body>
+</html>
